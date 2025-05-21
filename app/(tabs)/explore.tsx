@@ -3,8 +3,16 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import tw from 'twrnc';
 
+type NewsArticle = {
+  title: any;
+  description: string;
+  url: string;
+  urlToImage: string;
+  author: string;
+}
+
 export default function explore() {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<NewsArticle[]>([]);
 
   const getNews = async () =>{
     try{
